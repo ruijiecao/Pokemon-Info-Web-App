@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="angularjsNodejsTutorial">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="javascripts/app.js" type="text/javascript"></script>
+    <!-- Custom styles for this template-->
+    <link href="/stylesheets/common.css" rel="stylesheet">
+    <link href="/stylesheets/bestof.css" rel="stylesheet">
+    <!-- Include your custom css file here if you're making one -->
+  </head>
+
+
+  <body>
+<!-- Hidden Sidebar (reveals when clicked on menu icon)-->
+<nav class="w3-sidebar w3-black w3-animate-right w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
+  <a href="javascript:void(0)" onclick="closeNav()" class="w3-button w3-black w3-xxxlarge w3-display-topright" style="padding:0 12px;">
+    <i class="fa fa-remove"></i>
+  </a>
+  <div class="w3-bar-block w3-center">
+    <a href="/home/#" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
+    <a href="/home/#portfolio" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Pokemon Hub Overview</a>
+    <a href="/home/#about" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">About</a>
+    <a href="/home/#contact" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
+    <a class="nav-item nav-link" href="/recommendations">Pokedex</a>
+    <a class="nav-item nav-link" href="/bestof">Best Pokemon</a>
+    <a class="nav-item nav-link" href="/posters">Movies</a>
+    <a class="nav-item nav-link" href="/nest">Pokemon Go Nest</a>
+    <a class="nav-item nav-link" href="/">Log Out</a>
+  </div>
+</nav>
+
+
+  <!-- Menu icon to open sidebar -->
+  <span class="w3-button w3-top w3-white w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;" onclick="openNav()"><i class="fa fa-bars"></i></span>
+
+    <!-- Hidden Sidebar (reveals when clicked on menu icon)-->
+    <nav class="w3-sidebar w3-black w3-animate-right w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
+      <a href="javascript:void(0)" onclick="closeNav()" class="w3-button w3-black w3-xxxlarge w3-display-topright" style="padding:0 12px;">
+        <i class="fa fa-remove"></i>
+      </a>
+      <div class="w3-bar-block w3-center">
+        <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
+        <a href="#portfolio" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Pokemon Hub Overview</a>
+        <a href="#about" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">About</a>
+        <a href="#contact" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
+        <a class="nav-item nav-link" href="/recommendations">Search</a>
+      </div>
+    </nav>
+
+
+  <body ng-controller="bestofController">
+<nav class="w3-sidebar w3-black w3-animate-right w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
+  <a href="javascript:void(0)" onclick="closeNav()" class="w3-button w3-black w3-xxxlarge w3-display-topright" style="padding:0 12px;">
+    <i class="fa fa-remove"></i>
+  </a>
+  <div class="w3-bar-block w3-center">
+    <a href="/#" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
+    <a href="/#portfolio" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Pokemon Hub Overview</a>
+    <a href="/#about" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">About</a>
+    <a href="/#contact" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
+    <a class="nav-item nav-link" href="/recommendations">Pokedex</a>
+    <a class="nav-item nav-link" href="/bestof">Best Pokemon</a>
+    <a class="nav-item nav-link" href="/posters">Movies</a>
+  </div>
+</nav>
+
+
+  <!-- Menu icon to open sidebar -->
+  <span class="w3-button w3-top w3-white w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;" onclick="openNav()"><i class="fa fa-bars"></i></span>
+
+    <!-- Hidden Sidebar (reveals when clicked on menu icon)-->
+    <nav class="w3-sidebar w3-black w3-animate-right w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
+      <a href="javascript:void(0)" onclick="closeNav()" class="w3-button w3-black w3-xxxlarge w3-display-topright" style="padding:0 12px;">
+        <i class="fa fa-remove"></i>
+      </a>
+      <div class="w3-bar-block w3-center">
+        <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
+        <a href="#portfolio" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Pokemon Hub Overview</a>
+        <a href="#about" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">About</a>
+        <a href="#contact" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
+        <a class="nav-item nav-link" href="/recommendations">Search</a>
+      </div>
+    </nav>
+
+    <!-- Sample Content. You can either use this or make your own -->
+    <div class="container bestof-container">
+      <div class="jumbotron bestof-jumbotron" >
+        <div class="h5">Choose a Pokemon type of ...</div>
+
+        <div class="years-container">
+          <div class="dropdown-container">
+            <select class="dropdown" id="decadesDropdown" ng-model="selectedDecade" ng-options="d.TYPE1 for d in decades"></select>
+          </div>
+          <button class="submit-btn" id="decadesSubmitBtn" ng-click="submitDecade()">Submit</button>
+        </div>
+      </div>
+      <div class="jumbotron bestof-jumbotron">
+        <div class="h5">Spawn rate</div>
+
+        <!-- <div class="years-container">
+          <div class="dropdown-container">
+            <select class="dropdown" id="decadesDropdown" ng-model="selectedDecade" ng-options="d.TYPE1 for d in decades"></select>
+          </div>
+          <button class="submit-btn" id="decadesSubmitBtn" ng-click="submitDecade()">Submit</button>
+        </div>
+      </div> -->
+      <div class="jumbotron bestof-jumbotron">
+        <div class="movies-container">
+          <div class="movie">
+            <div class="header"><strong>Spawn Rate in the urban area</strong></div>
+            <!-- <div class="header"><strong>SpecialAttackBaseStat</strong></div> -->
+          </div>
+          <div class="movie" id="results" ng-repeat="P in rate">
+            <div class="genre">{{P.SPAWNRATEURBAN}}</div>
+            <!-- <div class="votes">{{movie.SPECIALATTACKBASESTAT}}</div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    
+      <div class="jumbotron bestof-jumbotron">
+        <div class="h5">Top 10 Best Pokemon of </div>
+        <div class="movies-container">
+          <div class="movie">
+            <div class="header"><strong>Name</strong></div>
+            <div class="header"><strong>Total Attack</strong></div>
+            <div class="header"><strong>Total Defense</strong></div>
+            <div class="header"><strong>Speed</strong></div>
+          </div>
+          <div class="movie" id="results" ng-repeat="movie in bestofMovies">
+            <div class="genre">{{movie.NAME}}</div>
+            <div class="title">{{movie.TOT_ATTACK}}</div>
+            <div class="votes">{{movie.TOT_DEFENSE}}</div>
+            <div class="votes">{{movie.SPEEDBASESTAT}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div class="container bestof-container">
+      <div class="jumbotron bestof-jumbotron">
+        <div class="h5">Abilities against it</div>
+
+        <!-- <div class="years-container">
+          <div class="dropdown-container">
+            <select class="dropdown" id="decadesDropdown" ng-model="selectedDecade" ng-options="d.TYPE1 for d in decades"></select>
+          </div>
+          <button class="submit-btn" id="decadesSubmitBtn" ng-click="submitDecade()">Submit</button>
+        </div>
+      </div> -->
+      <div class="jumbotron bestof-jumbotron">
+        <div class="movies-container">
+          <div class="movie">
+            <div class="header"><strong>It is vulnerable to abilities</strong></div>
+            <div class="header"><strong>Damage against it (factor)</strong></div>
+            <div class="header"><strong>It is resistant to abilities</strong></div>
+            <div class="header"><strong>Damage against it (factor)</strong></div>
+            <!-- <div class="header"><strong>SpecialAttackBaseStat</strong></div> -->
+          </div>
+          <div class="movie" id="results" ng-repeat="P in bestofAbilities">
+            <div class="genre">{{P.A1}}</div>
+            <div class="title">{{P.A2}}</div>
+            <div class="title">{{P.A3}}</div>
+            <div class="title">{{P.A4}}</div>
+            <!-- <div class="votes">{{movie.SPECIALATTACKBASESTAT}}</div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Include these before the end of body tag in every HTML file -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  
+  <script>
+  // Open and close sidebar
+  function openNav() {
+    document.getElementById("mySidebar").style.width = "60%";
+    document.getElementById("mySidebar").style.display = "block";
+  }
+  function closeNav() {
+    document.getElementById("mySidebar").style.display = "none";
+  }
+  </script>
+  </body>
+</html>

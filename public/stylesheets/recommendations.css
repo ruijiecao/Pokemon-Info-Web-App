@@ -1,0 +1,73 @@
+.input-container .movie-input {
+  margin: 10px 0;
+  width: 250px;
+  height: 36px;
+  border: none;
+  padding: 2px 16px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  outline: none;
+}
+
+.input-container .submit-btn {
+  margin-left: 10px;
+  width: 100px;
+  height: 36px;
+  border: none;
+  padding: 2px 26px;
+  box-sizing: border-box;
+  border-radius: 40px;
+  outline: none;
+  background: #bd54a4;
+  color: #fff;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.input-container .submit-btn:hover {
+  background: #c561ae; 
+}
+
+.input-container .submit-btn:active {
+  background: #d86bbe;
+}
+
+#submitPokemonImage {
+  width: 200px; 
+  height: auto;
+  margin-right: 150px;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+
+}
+
+.movies-container {
+  display: flex;
+  flex-flow: column wrap;
+  margin-top: 0px;
+}
+
+.movies-container .movie {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  height: 40px;
+  padding: 0 10px;
+}
+
+.movie .header, .movie .title, .movie .id, .movie .rating, .movie .vote-count {
+  flex: 1 0 10%;
+}
+
+.recommendations-jumbotron {
+  border-radius: 40px;
+  background: url(https://www.xmple.com/wallpaper/linear-white-green-gradient-1920x1080-c2-90ee90-ffffff-a-225-f-14.svg);
+  opacity:0.95;
+}
+
+.recommendations2-jumbotron {
+  border-radius: 40px;
+  background: url(https://i.pinimg.com/originals/7f/b2/38/7fb23899407ca8ed8d87fe2d1e6e6ea8.jpg);
+  opacity:0.95;
+}
